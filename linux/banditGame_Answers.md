@@ -116,6 +116,32 @@ we get loads of permission denied. which is an error message which we can redire
 
 #### Solution: 
 ```bash
+cat data.txt
+```
+
+```plaintext
+cellar's        C950ibpwKwzDxLZsN0h3dFfbivLkTr6o
+droplet's       OJG7nPMy9oEDQavm1G2tUzVYKHH9xp25
+gathers lw6GGDLwe3EeeoOTk9DOaVuXu3ivL7JZ
+Rolodex KPXZN8qs9rBEAVNEoTcvMDkILQZuScqK
+peat    vYOD9mKNmnaqgaf2qJpW7oQyH9qpr42g
+```
+
+```bash
+bandit7@bandit:~$ awk '$1 == "millionth" {print $2}' data.txt
+```
+
+**Password**: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+#### Notes: 
+remember $0 is the entire row. $1 is first column, $2 second column. $NF is last field
+
+
+## Bandit level 8 -> 9
+#### Challenge: The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
+
+#### Solution: 
+```bash
 
 ```
 
@@ -126,5 +152,7 @@ we get loads of permission denied. which is an error message which we can redire
 ```bash
 
 ```
+
+**Password**: 
 
 #### Notes: 

@@ -128,7 +128,7 @@ peat    vYOD9mKNmnaqgaf2qJpW7oQyH9qpr42g
 ```
 
 ```bash
-bandit7@bandit:~$ awk '$1 == "millionth" {print $2}' data.txt
+awk '$1 == "millionth" {print $2}' data.txt
 ```
 
 **Password**: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
@@ -142,15 +142,32 @@ remember $0 is the entire row. $1 is first column, $2 second column. $NF is last
 
 #### Solution: 
 ```bash
+sort data.txt | uniq -c | sort -r
+```
+
+```plaintext
+1 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+10 YzWkmobzcciV2kBh6HbktsUr4JcdYRLo
+...
+```
+
+**Password**: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+#### Notes: 
+-c for uniq, numbers the number of occurances
+
+
+## Bandit level 9 -> 10
+#### Challenge: The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
+
+#### Solution: 
+```bash
 
 ```
 
 ```plaintext
 
-```
-
-```bash
-
+...
 ```
 
 **Password**: 

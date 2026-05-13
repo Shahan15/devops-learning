@@ -84,3 +84,47 @@ cat ./maybehere07/.file2
 **Password**: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 
 
+## Bandit level 6 -> 7
+#### Challenge: The password for the next level is stored somewhere on the server and has all of the following properties:owned by user bandit7, owned by group bandit6, 33 bytes in size
+
+#### Solution: 
+```bash
+find / -type f -size 33c -user bandit7 -group bandit6
+```
+```plaintext
+find: ‘/var/crash’: Permission denied
+/var/lib/dpkg/info/bandit7.password
+find: ‘/var/lib/udisks2’: Permission denied
+find: ‘/var/lib/snapd/void’: Permission denied
+find: ‘/var/lib/snapd/cookie’: Permission denied
+find: ‘/var/lib/polkit-1’: Permission denied
+find: ‘/var/lib/private’: Permission denied
+```
+```bash
+find / -type f -size 33c -user bandit7 -group bandit6 2>/dev/null
+cat  cat /var/lib/dpkg/info/bandit7.password
+```
+
+#### Notes: 
+we get loads of permission denied. which is an error message which we can redirect (remember standard error stream) into dev/null as we dont need it. so we narrow it down to the password
+
+**Password**: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+
+## Bandit level 7 -> 8
+#### Challenge: The password for the next level is stored in the file data.txt next to the word millionth
+
+#### Solution: 
+```bash
+
+```
+
+```plaintext
+
+```
+
+```bash
+
+```
+
+#### Notes: 

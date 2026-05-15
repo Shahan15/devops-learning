@@ -162,14 +162,33 @@ sort data.txt | uniq -c | sort -r
 
 #### Solution: 
 ```bash
+strings data.txt | grep '=='
+```
 
+**Password**: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+#### Notes: 
+`strings` outputs the strings in the files that are at least 4 characters long. 
+
+## Bandit level 10 -> 11
+#### Challenge: The password for the next level is stored in the file data.txt, which contains base64 encoded data
+
+
+#### Solution: 
+```bash
+cat data.txt 
 ```
 
 ```plaintext
-
-...
+VGhlIHBhc3N3b3JkIGlzIGR0UjE3M2ZaS2IwUlJzREZTR3NnMlJXbnBOVmozcVJyCg==
+```
+```bash
+base64 -d data.txt
 ```
 
-**Password**: 
+**Password**: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 
 #### Notes: 
+base64 is used to represent binary in ASCII string format. used to encode images and docs in email attachment usually and including data in URL's
+
+

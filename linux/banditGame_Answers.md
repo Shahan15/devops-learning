@@ -192,3 +192,71 @@ base64 -d data.txt
 base64 is used to represent binary in ASCII string format. used to encode images and docs in email attachment usually and including data in URL's
 
 
+## Bandit level 11 -> 12
+#### Challenge: The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
+
+
+#### Solution: 
+```bash
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```
+
+**Password**: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+#### Notes: 
+this is a case of a cipher. We can use `rot13` to decipher but this is not standard linux. Instead we can use `tr` command. This reads from standard input, replaces specific characters based on a set of rules you give it. 
+
+```bash
+tr [SET1] [SET2]    
+tr 'A-Za-z' 'N-ZA-Mn-za-m'
+#SET 1: A-Z defines original alphabet uppercase. a-z, is all lowercase
+
+#SET 2: N-Z is what we replace it with, A-M. n-z,a-m. 
+```
+```plaintext
+SET1:  A B C D E F G H I J K L M  N O P Q R S T U V W X Y Z
+       │ │ │ │ │ │ │ │ │ │ │ │ │  │ │ │ │ │ │ │ │ │ │ │ │ │
+SET2:  N O P Q R S T U V W X Y Z  A B C D E F G H I J K L M
+
+The letter A (the 1st letter) lines up with N (the 14th letter). The distance between A and N is exactly 13.
+
+The letter B lines up with O. The distance is exactly 13.
+
+The letter M lines up with Z.
+
+The "Wrap Around"
+What happens when we get to the letter N in SET1? We want to rotate it forward by 13, but the alphabet ends at Z. So we need it to wrap around back to A.
+
+Because we wrote A-M right after N-Z in SET2, look at how they line up:
+
+N lines up with A
+
+O lines up with B
+
+Z lines up with M
+```
+
+## Bandit level 12 -> 13
+#### Challenge: The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+
+
+#### Solution: 
+```bash
+```
+
+```plaintext
+
+```
+```bash
+```
+
+**Password**: 
+
+#### Notes: 
+
+
+
+
+
+
+

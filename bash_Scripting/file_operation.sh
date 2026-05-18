@@ -18,4 +18,4 @@ file_operation(){
     fi  
 }
 
-file_operation my_directory my_file
+file_operation bash_demo demo.txt

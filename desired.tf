@@ -7,9 +7,13 @@ terraform {
     }
 
     backend "s3" {
-      bucket = "terraform-s3-bucket-shahan"
+      bucket = "terraform-s3bucket-shahan"
       key = "terraform.tfstate"
       region = "eu-west-1"
     }
+}
+
+provider "aws" {
+    region = "eu-west-1" 
 }
 

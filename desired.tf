@@ -7,7 +7,7 @@ terraform {
     }
 
     backend "s3" {
-      bucket = "terraform-statefile-shahan"
+      bucket = "terraform-s3-bucket-shahan"
       key = "terraform.tfstate"
       region = "eu-west-1"
     }
